@@ -1,4 +1,4 @@
-<div id="<%= dom_id todo %>">
+<%= turbo_frame_tag todo do %>
   <div class="flex justify-between items-center mb-4">
     <%= todo.todo %>
     <div>
@@ -6,4 +6,4 @@
       <%= link_to 'Delete', todo_path(todo), data: { turbo_method: :delete }, class: "rounded-lg py-2 ml-2 px-5 bg-red-500 text-white inline-block font-medium hover:opacity-50" %>
     </div>
   </div>
-</div>
+<% end %>
