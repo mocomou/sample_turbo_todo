@@ -1,7 +1,9 @@
 <div id="<%= dom_id todo %>">
-  <% if action_name != "show" %>
-    <%= link_to "Show this todo", todo, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to 'Edit this todo', edit_todo_path(todo), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-    <hr class="mt-6">
-  <% end %>
+  <div class="flex justify-between items-center mb-4">
+    <%= todo.todo %>
+    <div>
+      <%= link_to 'Edit', edit_todo_path(todo), class: "rounded-lg py-2 ml-2 px-5 bg-amber-400 text-white inline-block font-medium hover:opacity-50" %>
+      <%= link_to 'Delete', todo_path(todo), data: { turbo_method: :delete }, class: "rounded-lg py-2 ml-2 px-5 bg-red-500 text-white inline-block font-medium hover:opacity-50" %>
+    </div>
+  </div>
 </div>
